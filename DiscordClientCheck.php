@@ -2,7 +2,7 @@
 
 $CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
 $CLIENT_SECRET = 'CzS8SIm_x3hBYQ6ouVu1CZS4KMK3Yl6g'; // Replace with your Client Secret
-$REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/DiscordClientCheck.php'; // Replace with your Redirect URL
+$REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
 
 if (isset($_GET['code'])) {
     // Exchange code for access token
