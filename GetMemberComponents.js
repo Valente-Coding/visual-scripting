@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
     if (code) {
         const CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
         const CLIENT_SECRET = 'CzS8SIm_x3hBYQ6ouVu1CZS4KMK3Yl6g'; // Replace with your Client Secret
-        const REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
+        const REDIRECT_URI = 'https://discord.com/api/oauth2/authorize?client_id=1140613904708411463&redirect_uri=https%3A%2F%2Fvalente-coding.github.io%2Fvisual-scripting%2F&response_type=code&scope=identify%20guilds%20guilds.members.read'; // Replace with your Redirect URL
         const GUILD_ID = '1140576200331374692'; // Replace with your Guild ID
         const DESIRED_ROLE_ID = '1140576961916309584'; // Replace with the ID of the desired role
 
