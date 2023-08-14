@@ -20,6 +20,7 @@
         <script src='BuildVisualScript.js'></script>
         <script src='UILogic.js'></script>
         <script src='ComponentsManager.js'></script>
+        <script src='GetMemberComponents.js'></script>
     </head>
     <body onmouseup="DropComponent(); CloseOptionsMenu(event); StopConnection(event); StopGrabComponentSpace()" style="display: block;">
         <div class="components-space" onmousewheel="/*ZoomSpace(event, this)*/" onmousedown="GrabComponentSpace(event)" onmouseup="OpenOptionsMenu(event, this, ['<div class=\'menu-search-container\'><input class=\'search-imput\' type=\'text\' oninput=\'GetComponentsByName(this, this.parentElement.parentElement, this.value)\' onmousedown=\'event.stopPropagation();\' onmouseup=\'event.stopPropagation();\' onmouseover=\'setTimeout(() => {this.focus()}, 1);\'/></div>'])">
