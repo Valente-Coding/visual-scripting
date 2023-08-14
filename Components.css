@@ -1,0 +1,312 @@
+* {
+    --text: #fff;
+    --main: #0983A9;
+    --dark: #333;
+    --darker: #202020;
+    --darkest: #0C0C0C;
+    
+}
+
+:root {
+    --zoom: 1;
+}
+
+.components-space {
+    width: 100%;
+    height: 100%;
+}
+
+.component-container {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--darker);
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: grab;
+    font-size: 11px;
+    color: var(--text);
+    transform: scale(var(--zoom));
+    z-index: 1000;
+}
+
+.component-top-container {
+    background-color: var(--main);
+    width: 90%;
+    height: fit-content;
+    padding: 5px 5%;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.component-input-container {
+    width: 90%;
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    padding: 5px 5%;
+    grid-template-columns: 50% 50%;
+}
+
+.component-input-container-full {
+    width: 90%;
+    height: fit-content;
+    display: grid;
+    grid-auto-flow: column;
+    place-items: center;
+    padding: 5px 5%;
+    grid-template-columns: 100%;
+}
+
+.component-input-left {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    background-color: transparent;
+}
+
+.component-input-right {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background-color: transparent;
+}
+
+.component-input-full {
+    width: 100%;
+    display: flex;
+    background-color: transparent;
+}
+
+
+
+.component-imput-title {
+    width: 100%;
+    text-align: start;
+    margin-right: 10px;
+}
+
+.component-imput {
+    width: 90%;
+    height: 18px;
+    font-size: 9.5px;
+    outline: none;
+    border: 0px solid black;
+    border-radius: 2px;
+    padding: 0px 2px;
+    background: var(--dark);
+}
+
+.component-imput-select {
+    width: 90%;
+    height: 18px;
+    font-size: 9.5px;
+    outline: none;
+    border: 0px solid black;
+    border-radius: 2px;
+    padding: 0px 2px;
+    background: var(--dark);
+}
+
+
+.component-input-switch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.component-input-switch input { 
+    opacity: 0;
+    width: 97%;
+    height: 70%;
+    position: absolute;
+}
+
+.component-input-switch-slider {
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 35px;
+    height: 20px;
+    background: var(--dark);
+    -webkit-transition: .4s;
+    transition: .4s;
+    float: right;
+}
+
+.component-input-switch-slider:before {
+    position: absolute;
+    content: "";
+    width: 14px;
+    height: 14px;
+    margin-top: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    -webkit-transform: translateX(25%);
+    -ms-transform: translateX(25%);
+    transform: translateX(25%);
+    pointer-events: none;
+}
+
+input:checked + .component-input-switch-slider {
+    background-color: var(--main);
+}
+
+input:focus + .component-input-switch-slider {
+    box-shadow: 0 0 1px var(--main);
+}
+
+input:checked + .component-input-switch-slider:before {
+    -webkit-transform: translateX(135%);
+    -ms-transform: translateX(135%);
+    transform: translateX(135%);
+}
+
+/* Rounded sliders */
+.component-input-switch-slider.round {
+    border-radius: 34px;
+}
+
+.component-input-switch-slider.round:before {
+    border-radius: 50%;
+}
+
+
+.component-imput-float {
+    width: 27%;
+    height: 18px;
+    font-size: 9.5px;
+    outline: none;
+    border: 0px solid black;
+    border-radius: 2px;
+    padding: 0px 2px;
+    text-align: center;
+    background: var(--dark);
+}
+
+.component-imput-x {
+    width: 31%;
+    height: 18px;
+    font-size: 9.5px;
+    outline: none;
+    border: 0px solid black;
+    border-radius: 2px;
+    padding: 0px 2px;
+    text-align: center;
+    background: var(--dark);
+}
+
+.component-imput-y {
+    width: 31%;
+    height: 18px;
+    font-size: 9.5px;
+    outline: none;
+    border: 0px solid black;
+    border-radius: 2px;
+    padding: 0px 2px;
+    text-align: center;
+    margin-left: 2%;
+    background: var(--dark);
+}
+
+.component-imput-z {
+    width: 31%;
+    height: 18px;
+    font-size: 9.5px;
+    outline: none;
+    border: 0px solid black;
+    border-radius: 2px;
+    padding: 0px 2px;
+    text-align: center;
+    margin-left: 2%;
+    background: var(--dark);
+}
+
+.component-connections {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 18px;
+    height: 18px;
+}
+
+.component-connections path {
+    stroke: var(--text); 
+    stroke-width: 1.5px; 
+    stroke-dasharray: none; 
+    stroke-linecap: butt; 
+    stroke-dashoffset: 0; 
+    stroke-linejoin: miter; 
+    stroke-miterlimit: 4; 
+    fill: transparent; 
+    fill-rule: nonzero; opacity: 1;
+}
+
+.connected-var {
+    background-color: var(--text) !important;
+}
+
+.connected path {
+    fill: var(--text);
+}
+
+
+.variable-connections {
+    width: 10px;
+    height: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid white;
+    border-radius: 50px;
+}
+
+
+
+
+
+.start-component {
+    width: 70px;
+}
+
+.spawn-ped-component {
+    width: 250px;
+}
+
+.request-model-component {
+    width: 200px;
+}
+
+.string-component {
+    width: 200px;
+}
+
+.bool-component {
+    width: 70px;
+}
+
+.float-component {
+    width: 150px;
+}
+
+.while-component {
+    width: 200px;
+}
+
+.if-component {
+    width: 200px;
+}
+
+.is-control-just-released-component {
+    width: 150px;
+}
+
+.end-component {
+    width: 100px;
+}

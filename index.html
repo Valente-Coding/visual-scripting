@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>KOFKOF Mission Maker</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <script src="https://kit.fontawesome.com/6e864576f6.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+        <link rel='stylesheet' type='text/css' media='screen' href='Components.css'>
+        <script src="plugins/leader-line.min.js"></script>
+        <script src='Tools.js'></script>
+        <script src='LuaConnector.js'></script>
+        <script src='IndexScript.js'></script>
+        <script src='Connections.js'></script>
+        <script src='ComponentsLogic.js'></script>
+        <script src='BuildVisualScript.js'></script>
+        <script src='UILogic.js'></script>
+        <script src='ComponentsManager.js'></script>
+    </head>
+    <body onmouseup="DropComponent(); CloseOptionsMenu(event); StopConnection(event); StopGrabComponentSpace()" style="display: block;">
+        <div class="components-space" onmousewheel="/*ZoomSpace(event, this)*/" onmousedown="GrabComponentSpace(event)" onmouseup="OpenOptionsMenu(event, this, ['<div class=\'menu-search-container\'><input class=\'search-imput\' type=\'text\' oninput=\'GetComponentsByName(this, this.parentElement.parentElement, this.value)\' onmousedown=\'event.stopPropagation();\' onmouseup=\'event.stopPropagation();\' onmouseover=\'setTimeout(() => {this.focus()}, 1);\'/></div>'])">
+            
+        </div>
+        <div class="toolbar-container">
+            <div class="toolbar-buttons">
+                <div class="toolbar-button play" onmouseup="BuildScript()"><i class="fa-solid fa-play"></i></div>
+            </div>
+        </div>
+        <div class="menu-options-container hide" style="top: 0px; left: 0px;">
+            
+        </div>
+    </body>
+</html>
