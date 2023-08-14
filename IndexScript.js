@@ -120,7 +120,7 @@ window.addEventListener('load', function() {
 
 function LoginDiscord() {
     const CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
-    const REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/DiscordClientCheck.php'; // Replace with your Redirect URL
+    const REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
     
     const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=identify`;
     
