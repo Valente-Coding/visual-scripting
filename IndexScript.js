@@ -119,12 +119,10 @@ window.addEventListener('load', function() {
 });
 
 function LoginDiscord() {
-    const CLIENT_ID = '1140613904708411463';
-    const REDIRECT_URL = 'https://valente-coding.github.io/visual-scripting/';
+    const CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
+    const REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/DiscordClientCheck.php'; // Replace with your Redirect URL
     
-    // Construct the OAuth2 URL
-    const oauthUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URL)}&response_type=code&scope=identify`;
+    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=identify`;
     
-    // Redirect the user to the Discord login page
-    window.location.href = oauthUrl;
+    window.location.href = authUrl;
 }

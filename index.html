@@ -25,10 +25,14 @@
         <div class="components-space" onmousewheel="/*ZoomSpace(event, this)*/" onmousedown="GrabComponentSpace(event)" onmouseup="OpenOptionsMenu(event, this, ['<div class=\'menu-search-container\'><input class=\'search-imput\' type=\'text\' oninput=\'GetComponentsByName(this, this.parentElement.parentElement, this.value)\' onmousedown=\'event.stopPropagation();\' onmouseup=\'event.stopPropagation();\' onmouseover=\'setTimeout(() => {this.focus()}, 1);\'/></div>'])">
             
         </div>
-        <div class="toolbar-container">
-            <div class="toolbar-buttons">
-                <div class="toolbar-button play" onmouseup="BuildScript()"><i class="fa-solid fa-play"></i></div>
-                <div class="toolbar-button play" onmouseup="LoginDiscord()"><i class="fa-solid fa-play"></i></div>
+        <div class="side-menu-container">
+            <div class="side-menu-button"><i class="fa-solid fa-caret-left menu-icon"></i></div>
+            <div class="lua-output-container">
+
+            </div>
+            <div class="side-menu-buttons">
+                <div class="play-menu-button" onmouseup="BuildScript()"><i class="fa-solid fa-play"></i></div>
+                <div class="discord-menu-button" onmouseup="LoginDiscord()"><i class="fa-brands fa-discord"></i></div>
             </div>
         </div>
         <div class="menu-options-container hide" style="top: 0px; left: 0px;">

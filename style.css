@@ -56,38 +56,6 @@ body {
     background-color: var(--main);
 }
 
-.toolbar-container {
-    width: 100%;
-    height: fit-content;
-    background-color: var(--darker);
-    position: fixed;
-    bottom: 0px;
-    padding: 10px;
-    z-index: 1000;
-}
-
-.toolbar-buttons {
-    width: 100%;
-    height: 100%;
-}
-
-.toolbar-button {
-    font-size: 20px;
-    color: var(--text);
-    min-width: 40px;
-    background-color: var(--main);
-    width: fit-content;
-    height: fit-content;
-    display: grid;
-    place-items: center;
-    padding: 10px;
-    border-radius: 2px;
-}
-
-.play {
-    background-color: green;
-}
-
 .menu-search-container {
     font-size: 11px;
     padding: 5px;
@@ -100,4 +68,77 @@ body {
     background-color: var(--darker);
     outline: none;
     border: 0px;
+}
+
+.side-menu-container {
+    width: 30vw;
+    height: 100vh;
+    background-color: var(--dark);
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(30vw);
+    transition: transform 0.2s;
+}
+
+.side-menu-container:hover {
+    transform: translateX(0vw);
+}
+
+.side-menu-container:hover .menu-icon {
+    transform: rotate(180deg);
+}
+
+.side-menu-button {
+    width: 5%;
+    height: 5%;
+    position: absolute;
+    top: 1%;
+    left: -5%;
+    background-color: var(--dark);
+    display: grid;
+    place-items: center;
+    border-radius: 5px 0 0 5px;
+    font-size: 1.4vw;
+}
+
+.lua-output-container {
+    width: 90%;
+    height: 80%;
+    background-color: var(--darker);
+    border-radius: 2px;
+}
+
+.side-menu-buttons {
+    width: 90%;
+    height: 5%;
+    display: flex;
+}
+
+.play-menu-button {
+    width: 49.5%;
+    height: 100%;
+    margin-top: 5%;
+    background-color: green;
+    display: grid;
+    place-items: center;
+    font-size: 2.5vh;
+    border-radius: 2px;
+    margin-right: 0.5%;
+}
+
+.discord-menu-button {
+    width: 49.5%;
+    height: 100%;
+    margin-top: 5%;
+    background-color: #7983F5;
+    display: grid;
+    place-items: center;
+    font-size: 2.5vh;
+    border-radius: 2px;
+    margin-left: 0.5%;
 }
