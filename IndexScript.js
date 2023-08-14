@@ -118,3 +118,13 @@ window.addEventListener('load', function() {
     console.log(JSON.stringify(document.getElementsByClassName("is-control-just-released-component")[0].outerHTML))
 });
 
+function LoginDiscord() {
+    const CLIENT_ID = '422149308024881157';
+    const REDIRECT_URL = 'https://valente-coding.github.io/visual-scripting/';
+    
+    // Construct the OAuth2 URL
+    const oauthUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URL)}&response_type=code&scope=identify`;
+    
+    // Redirect the user to the Discord login page
+    window.location.href = oauthUrl;
+}
