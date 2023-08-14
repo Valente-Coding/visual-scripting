@@ -119,10 +119,7 @@ window.addEventListener('load', function() {
 });
 
 function LoginDiscord() {
-    const CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
-    const REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
-    
-    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&response_type=code&scope=identify`;
+    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=1140613904708411463&redirect_uri=https%3A%2F%2Fvalente-coding.github.io%2Fvisual-scripting%2F&response_type=code&scope=identify%20guilds%20guilds.members.read`;
     
     window.location.href = authUrl;
 }
