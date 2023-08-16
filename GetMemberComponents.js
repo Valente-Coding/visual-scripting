@@ -3,6 +3,8 @@ window.addEventListener('load', function() {
     const urlParams = new URLSearchParams(queryString);
     const code = urlParams.get('code');
 
+    if (!code) return
+
     fetch(window.location.origin + window.location.pathname + "/DiscordClientCheck.php/" + window.location.search, {
         'headers': {
             'Accept': 'text/html',
