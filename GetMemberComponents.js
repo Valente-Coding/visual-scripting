@@ -5,13 +5,13 @@ window.addEventListener('load', function() {
 
     if (!code) return
 
-    fetch(window.location.origin + window.location.pathname + "DiscordClientCheck.php", {
+    fetch(window.location.origin + window.location.pathname + "DiscordClientCheck.php" + window.location.search, {
         'headers': {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
         },
         'method':'POST',
-        'body':JSON.stringify({'code': code}),
+        'body': '',
     })
     .then((response) => response.json())
     .then((responseJson)=>{
