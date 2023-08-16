@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 
     if (!code) return
 
-    fetch(window.location.origin + window.location.pathname + "/DiscordClientCheck.php/" + window.location.search, {
+    fetch(window.location.origin + window.location.pathname + "DiscordClientCheck.php" + window.location.search, {
         'headers': {
             'Accept': 'text/html',
             'Content-Type': 'text/html'
