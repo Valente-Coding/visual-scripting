@@ -1,8 +1,5 @@
 <?php
-header('Content-Type: application/json'); 
-
-
-$code = $_POST['code'];
+$code = $_GET['code'];
 
 if ($code) {
     $CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
