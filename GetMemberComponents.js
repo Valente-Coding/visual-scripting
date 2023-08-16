@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 
     if (!code) return
 
-    fetch(window.location.origin + window.location.pathname + "DiscordClientCheck.php", {
+    fetch("https://valente-coding.github.io/visual-scripting/DiscordClientCheck.php", {
         'headers': {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
