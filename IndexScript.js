@@ -118,8 +118,6 @@ window.addEventListener('load', function() {
     console.log(JSON.stringify(document.getElementsByClassName("is-control-just-released-component")[0].outerHTML))
 });
 
-function LoginDiscord() {
-    const authUrl = `https://discord.com/api/oauth2/authorize?client_id=1140613904708411463&redirect_uri=https%3A%2F%2Fvalente-coding.github.io%2Fvisual-scripting%2F&response_type=code&scope=identify%20guilds%20guilds.members.read`;
-    
-    window.location.href = authUrl;
+function LoginPatreon() {
+    window.location.href = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=1-DqtWay37mEkp3I-6gtUQ-a1O_2IIBRB8wnnrON9sphlbUoCj42Ep_1VECAv4oN&redirect_uri=https://valente-coding.github.io/visual-scripting/`;
 }
