@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
         const REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
         const GUILD_ID = '1140576200331374692'; // Replace with your Guild ID
         const DESIRED_ROLE_ID = '1140576961916309584'; // Replace with the ID of the desired role
+        const BOT_TOKEN = 'MTE0MDYxMzkwNDcwODQxMTQ2Mw.GwtxFC.8IOQ2A2ZhQ7YChrr_7WjWtKDxbwpMJqDqsWlGQ'
 
         const tokenUrl = 'https://discord.com/api/oauth2/token';
         const tokenParams = new URLSearchParams({
@@ -46,7 +47,7 @@ window.addEventListener('load', function() {
 
                         fetch(memberUrl, {
                             headers: {
-                                Authorization: `Bot YOUR_BOT_TOKEN`, // Replace with your Bot token
+                                Authorization: `Bot ${BOT_TOKEN}`, // Replace with your Bot token
                             },
                         })
                         .then(response => response.json())
