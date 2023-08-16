@@ -74,7 +74,7 @@ body {
     width: 30vw;
     height: 100vh;
     background-color: var(--dark);
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     display: flex;
