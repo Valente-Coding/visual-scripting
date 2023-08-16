@@ -1,15 +1,18 @@
 <?php
 
-$CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
-$CLIENT_SECRET = 'CzS8SIm_x3hBYQ6ouVu1CZS4KMK3Yl6g'; // Replace with your Client Secret
-$REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
+$code = $_GET['code'];
 
-if (isset($_GET['code'])) {
+if ($code) {
+    $CLIENT_ID = '1140613904708411463'; // Replace with your Client ID
+    $CLIENT_SECRET = 'CzS8SIm_x3hBYQ6ouVu1CZS4KMK3Yl6g'; // Replace with your Client Secret
+    $REDIRECT_URI = 'https://valente-coding.github.io/visual-scripting/'; // Replace with your Redirect URL
+    $GUILD_ID = '1140576200331374692'; // Replace with your Guild ID
+    $DESIRED_ROLE_ID = '1140576961916309584'; // Replace with the ID of the desired role
+    $BOT_TOKEN = 'MTE0MDYxMzkwNDcwODQxMTQ2Mw.GwtxFC.8IOQ2A2ZhQ7YChrr_7WjWtKDxbwpMJqDqsWlGQ';
+
     // Exchange code for access token
-    $code = $_GET['code'];
     $tokenUrl = 'https://discord.com/api/oauth2/token';
-    
-    $tokenData = http_build_query(array(
+    $tokenParams = http_build_query(array(
         'client_id' => $CLIENT_ID,
         'client_secret' => $CLIENT_SECRET,
         'grant_type' => 'authorization_code',
@@ -22,7 +25,7 @@ if (isset($_GET['code'])) {
         'http' => array(
             'method' => 'POST',
             'header' => 'Content-Type: application/x-www-form-urlencoded',
-            'content' => $tokenData,
+            'content' => $tokenParams,
         ),
     );
 
@@ -43,29 +46,27 @@ if (isset($_GET['code'])) {
 
         $guildsData = json_decode($guildsResponse, true);
 
-        $desiredRoleID = '1140576961916309584'; // Replace with the ID of the role you want to check
+        $guild = array_filter($guildsData, function ($g) use ($GUILD_ID) {
+            return $g['id'] === $GUILD_ID;
+        });
 
-        foreach ($guildsData as $guild) {
-            if ($guild['id'] === '1140576200331374692') { // Replace with your Guild ID
-                // Fetch member data for the user in the specific guild
-                $memberUrl = "https://discord.com/api/v10/guilds/{$guild['id']}/members/@me";
-                $memberResponse = file_get_contents($memberUrl, false, stream_context_create([
-                    'http' => [
-                        'header' => 'Authorization: Bot YOUR_BOT_TOKEN', // Replace with your Bot token
-                    ],
-                ]));
+        if (!empty($guild)) {
+            $memberUrl = "https://discord.com/api/v10/guilds/{$GUILD_ID}/members/@me";
+            $memberResponse = file_get_contents($memberUrl, false, stream_context_create([
+                'http' => [
+                    'header' => "Authorization: Bot $BOT_TOKEN",
+                ],
+            ]));
 
-                $memberData = json_decode($memberResponse, true);
+            $memberData = json_decode($memberResponse, true);
 
-                // Check if the user has the desired role
-                if (in_array($desiredRoleID, $memberData['roles'])) {
-                    echo 'User has the desired role in the guild.';
-                } else {
-                    echo 'User does not have the desired role in the guild.';
-                }
-
-                break; // No need to check other guilds
+            if (in_array($DESIRED_ROLE_ID, $memberData['roles'])) {
+                echo 'User has the desired role in the guild.';
+            } else {
+                echo 'User does not have the desired role in the guild.';
             }
+        } else {
+            echo 'User is not a member of the specified guild.';
         }
     } else {
         echo 'Error obtaining access token.';
