@@ -5,17 +5,18 @@ window.addEventListener('load', function() {
 
     if (!code) return
 
-    fetch(window.location.origin + window.location.pathname + "DiscordClientCheck.php" + window.location.search, {
+    fetch(window.location.origin + window.location.pathname + "DiscordClientCheck.php", {
         'headers': {
-            'Accept': 'text/html',
-            'Content-Type': 'text/html'
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
         },
-        'method':'GET',
+        'method':'POST',
+        'body':JSON.stringify({'code': code}),
     })
-    .then((response) => response.text())
-    .then((responseText)=>{
+    .then((response) => response.json())
+    .then((responseJson)=>{
         console.info("Response?");
-        console.info(responseText);     // result: "The name param is received!...(and the rest of your page)
+        console.info(responseJson);
     });
 
 });
