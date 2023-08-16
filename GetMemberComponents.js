@@ -11,7 +11,6 @@ window.addEventListener('load', function() {
             'Content-Type': 'text/html'
         },
         'method':'GET',
-        'body':'',
     })
     .then((response) => response.text())
     .then((responseText)=>{
