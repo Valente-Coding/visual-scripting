@@ -119,5 +119,6 @@ window.addEventListener('load', function() {
 });
 
 function LoginPatreon() {
-    window.location.href = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=1-DqtWay37mEkp3I-6gtUQ-a1O_2IIBRB8wnnrON9sphlbUoCj42Ep_1VECAv4oN&redirect_uri=https://valente-coding.github.io/visual-scripting/`;
+    const REDIRECT_URL = "https://valente-coding.github.io/visual-scripting/"
+    window.location.href = `https://www.patreon.com/oauth2/authorize?response_type=code&client_id=1-DqtWay37mEkp3I-6gtUQ-a1O_2IIBRB8wnnrON9sphlbUoCj42Ep_1VECAv4oN&redirect_uri=${REDIRECT_URL}`;
 }
