@@ -5,7 +5,7 @@ window.addEventListener('load', function() {
 
     if (!code) return
 
-    fetch('https://valente-coding.github.io/visual-scripting/TestPHP.php', {
+    fetch('TestPHP.php', {
         'headers': {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
