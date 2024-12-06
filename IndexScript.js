@@ -119,7 +119,7 @@ window.addEventListener('load', function() {
 });
 
 function LoginDiscord() {
-    const CLIENT_ID = '422149308024881157';
+    const CLIENT_ID = 'DISCORD_CLIENT_ID';
     const REDIRECT_URL = 'https://valente-coding.github.io/visual-scripting/';
     
     // Construct the OAuth2 URL
